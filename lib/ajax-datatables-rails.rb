@@ -19,7 +19,7 @@ class AjaxDatatablesRails
   def as_json(options = {})
     {
       sEcho: params[:sEcho].to_i,
-      iTotalRecords: @model_name.count,
+      iTotalRecords: filtered_record_count,
       iTotalDisplayRecords: filtered_record_count,
       aaData: data
     }
